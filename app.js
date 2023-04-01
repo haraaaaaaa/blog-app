@@ -1,8 +1,9 @@
 // requirements
 const express = require("express");
 const path = require("path");
-const fs = require("fs");
-const { v4 } = require("uuid");
+const blogRoutes = require("./routes/blog.routes");
+const userRoutes = require("./routes/user.routes");
+const errorControllers = require("./controllers/error-controllers");
 
 // server setup
 const app = express();
@@ -12,6 +13,12 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
+
+// routing
+app.use(blogRoutes);
+app.use(userRoutes);
+
+app.get("*", errorControllers.get404);
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");

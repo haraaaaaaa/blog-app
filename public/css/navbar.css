@@ -1,0 +1,29 @@
+.nav{
+    width: 100vw;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFA07A;
+}
+.nav__logo span{
+    color: whitesmoke;
+}
+
+.nav__links{
+    display: flex;
+    gap: 2rem;
+}
+.nav__links a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.nav__links a:hover{
+    color: #9FE2BF;
+    border-bottom: 1px solid #9FE2BF;
+    transition: 0.4s;  
+}
+.active{
+    color: #9FE2BF!important;
+    border-bottom: 1px solid #9FE2BF;
+}

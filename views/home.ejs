@@ -4,13 +4,13 @@
 <body>
     <%- include("includes/navbar.ejs") %>
     <div class="list">
-    <h1 class="list__header">List of blogs</h1>
-    <% if (posts.length === 0) { %>
-     <h1>There are no products.</h1>
+    <h1 class="list__header">List Of Blogs</h1>
+    <% if (blogs.length === 0) { %>
+     <h1 class="list__list">There are no blogs.</h1>
     <% } else { %>
         <ul class="list__list">
-        <% for(const post of posts) { %>
-            <%- include("includes/blog.ejs", {post}) %>
+        <% for(const blog of blogs) { %>
+            <%- include("includes/blog.ejs", {blog}) %>
         <% } %>
         </ul>
     <% }%>

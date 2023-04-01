@@ -2,9 +2,9 @@
 const path = require("path");
 const fs = require("fs");
 const { v4 } = require("uuid");
-const Post = require("../models/Post");
+const Blog = require("../models/Blog.js");
 
-const postsDataPath = path.join(__dirname, "..", "data", "posts.json");
+const blogsDataPath = path.join(__dirname, "..", "data", "blogs.json");
 const commentsDataPath = path.join(__dirname, "..", "data", "comments.json");
 
 const getCommentsFromFile = (cb) => {
@@ -18,10 +18,10 @@ const getCommentsFromFile = (cb) => {
 };
 
 module.exports = class Comment {
-  constructor(username, comment, postId) {
+  constructor(username, comment, blogId) {
     this.username = username;
     this.comment = comment;
-    this.postId = postId;
+    this.blogId = blogId;
   }
 
   save() {

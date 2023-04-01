@@ -1,8 +1,23 @@
 <%- include("includes/head.ejs") %>
-<link rel="stylesheet" href="/css/list.css">
+<link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
     <%- include("includes/navbar.ejs") %>
-    test
+    <form class="form" action="/user/post-blog" method="post">
+        <h1 class="form__header">Post a New Blog</h1>
+        <div class="form__control">
+            <label for="title">Title</label>
+        <input type="text" placeholder="Title" name="title">
+        </div>
+
+        <div class="form__control">
+            <label for="content">Write Your Blog Here:</label>
+            <textarea name="content" id="" cols="30" rows="10" placeholder="Blog Content"></textarea>
+        </div>
+        
+        <div class="form__action">
+            <button type="submit">Post the Blog</button>
+        </div>
+    </form>
 </body>
 </html>

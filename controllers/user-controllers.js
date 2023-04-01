@@ -15,6 +15,6 @@ exports.getPostBlog = (request, response) => {
 exports.postPostBlog = (request, response) => {
   const { title, content } = request.body;
   const blog = new Blog(title, content);
-  Blog.save();
+  blog.save();
   response.redirect("/");
 };

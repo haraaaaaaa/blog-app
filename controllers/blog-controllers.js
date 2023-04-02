@@ -18,7 +18,7 @@ exports.getBlogs = (request, response) => {
 exports.getBlog = (request, response) => {
   const { id } = request.params;
 
-  Blog.findById(id, (post) => {
+  Blog.findById(id, (blog) => {
     const error = { message: "Not Found" };
 
     if (!blog) {
@@ -29,7 +29,7 @@ exports.getBlog = (request, response) => {
       });
     }
 
-    response.render("blog", {
+    response.render("blog-detail", {
       pageTitle: blog.title,
       path: "/blogs",
       blog,

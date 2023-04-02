@@ -35,7 +35,7 @@ module.exports = class Blog {
     getBlogsFromFile(cb);
   }
 
-  static findById(cb, id) {
+  static findById(id, cb) {
     getBlogsFromFile((blogs) => {
       const blog = blogs.find((blog) => blog.id === id);
       cb(blog);

@@ -11,22 +11,37 @@
 
     <button id="show-btn" class="show-com-btn">Show Comments</button>
 
-    <form id="form" class="comm" action="/blogs/<%= blog.id %>" method="post">
-        <h1 class="comm__header">Write a Comment...</h1>
-        <div class="comm__control">
-            <label for="username">Your Username</label>
-        <input type="text" placeholder="Username" name="username">
-        </div>
+    <div class="comments-container">
+        <% if (comments.length === 0) { %>
+        <h1 class="">There are no comments.</h1>
+        <% } else { %>
+        <ul class="">
+        <% for(const comment of comments) { %>
+            <%- include("includes/comment.ejs", {comment}) %>
+        <% } %>
+        </ul>
+        <% }%>
+    </div>
 
-        <div class="comm__control">
-            <label for="content">Write Your Comment Here:</label>
-            <textarea name="content" id="" cols="30" rows="10" placeholder="Comment"></textarea>
-        </div>
-        
-        <div class="comm__action">
-            <button type="submit">Post Your Comment</button>
-        </div>
-    </form>
+    <div class="form-container">
+        <form id="form" class="comm" action="/blogs/<%= blog.id %>" method="post">
+            <h1 class="comm__header">Write a Comment...</h1>
+            <div class="comm__control">
+                <label for="username">Your Username</label>
+            <input type="text" placeholder="Username" name="username">
+            </div>
+
+            <div class="comm__control">
+                <label for="content">Write Your Comment Here:</label>
+                <textarea name="content" id="" cols="30" rows="10" placeholder="Comment"></textarea>
+            </div>
+            
+            <div class="comm__action">
+                <button type="submit">Post Your Comment</button>
+            </div>
+        </form>
+    </div>
+
     <script src="/javascript/comment.js"></script>
 </body>
 </html>

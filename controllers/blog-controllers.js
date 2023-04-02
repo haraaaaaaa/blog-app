@@ -1,9 +1,5 @@
 // requirements
-const path = require("path");
-const fs = require("fs");
 const Blog = require("../models/Blog");
-
-const blogsDataPath = path.join(__dirname, "..", "data", "blogs.json");
 
 exports.getBlogs = (request, response) => {
   Blog.fetchAll((blogs) => {

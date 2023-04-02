@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const blogRoutes = require("./routes/blog.routes");
 const userRoutes = require("./routes/user.routes");
+const commentRoutes = require("./routes/comment.routes");
 const errorControllers = require("./controllers/error-controllers");
 
 // server setup
@@ -17,6 +18,7 @@ app.use(express.static("public"));
 // routing
 app.use(blogRoutes);
 app.use(userRoutes);
+app.use(commentRoutes);
 
 app.get("*", errorControllers.get404);
 

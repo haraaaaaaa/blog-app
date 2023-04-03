@@ -33,14 +33,10 @@ module.exports = class Comment {
     });
   }
 
-  static fetchAll(cb) {
-    getCommentsFromFile(cb);
-  }
-
-  static findById(id, cb) {
+  static fetchAll(id, cb) {
     getCommentsFromFile((comments) => {
       const comment = comments.find((comment) => comment.id === id);
-      cb(comment);
+      cb(comments);
     });
   }
 };

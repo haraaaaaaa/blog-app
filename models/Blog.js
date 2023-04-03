@@ -14,7 +14,6 @@ const getBlogsFromFile = (cb) => {
     }
   });
 };
-
 module.exports = class Blog {
   constructor(title, content, id) {
     this.id = v4();

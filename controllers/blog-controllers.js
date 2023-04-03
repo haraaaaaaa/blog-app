@@ -19,7 +19,7 @@ exports.getBlog = (request, response) => {
   Blog.findById(id, (blog) => {
     const error = { message: "Not Found" };
 
-    Comment.findById(id, (comments) => {
+    Comment.fetchAll(id, (comments) => {
       if (!blog) {
         return response.render("error", {
           pageTitle: error.Title,

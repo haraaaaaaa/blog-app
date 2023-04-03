@@ -12,7 +12,7 @@
 }
 .comm__action button:hover{
     background-color: #9FE2BF;
-    transition: 0.3s;
+    transition: 0.125s;
 }
 
 .show-com-btn{
@@ -28,21 +28,28 @@
     cursor: pointer;
 }
 
-.comm-btn{
-    background-color: #FFA07A;
-    color: #eee;
-    border: none;
+.show-com-btn:hover{
+    background-color: #9FE2BF;
+    transition: 0.225s;
+}
+
+.blog{
+    width: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
     border-radius: 5px;
     box-shadow: 3px 3px 9px -6px black;
-    padding: 0.5rem 1.5rem;
-    text-decoration: none;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    cursor: pointer;
 }
 
 .blog h1{
     font-weight: bolder;
+    margin-bottom: 1rem;
+}
+
+.blog p{
+
 }
 
 .hidden{

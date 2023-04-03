@@ -1,17 +1,18 @@
 <%- include("includes/head.ejs") %>
 <link rel="stylesheet" href="/css/blog-detail.css">
+<link rel="stylesheet" href="/css/add-comment.css">
 </head>
 <body>
     <%- include("includes/navbar.ejs") %>
     <div class="blog">
         <h1> <%= blog.title %> </h1>
         <p> <%= blog.content %> </p>
-        <button id="comm-btn" class="comm-btn">Comment</button>
+        <button id="show-btn" class="show-com-btn">Show Comments</button>
     </div>
 
-    <button id="show-btn" class="show-com-btn">Show Comments</button>
+    <button id="comm-btn" class="comm-btn">Comment</button>
 
-    <div class="comments-container">
+    <div id="comment-container" class="comment-container">
         <% if (comments.length === 0) { %>
         <h1 class="">There are no comments.</h1>
         <% } else { %>
@@ -23,7 +24,7 @@
         <% }%>
     </div>
 
-    <div class="form-container">
+    <div id="form-container" class="form-container">
         <form id="form" class="comm" action="/blogs/<%= blog.id %>" method="post">
             <h1 class="comm__header">Write a Comment...</h1>
             <div class="comm__control">

@@ -17,6 +17,6 @@ exports.postPostBlog = (request, response) => {
     response.render("error", { pageTitle: error.title, path: "*", error });
   } else {
     blog.save();
-    response.redirect("/blogs/:id");
+    response.redirect("/blogs/");
   }
 };

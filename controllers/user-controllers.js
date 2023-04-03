@@ -1,4 +1,4 @@
-// requirements
+// Requirements
 const Blog = require("../models/Blog");
 
 exports.getPostBlog = (request, response) => {
@@ -11,6 +11,12 @@ exports.getPostBlog = (request, response) => {
 exports.postPostBlog = (request, response) => {
   const { title, content } = request.body;
   const blog = new Blog(title, content);
-  blog.save();
-  response.redirect("/");
+
+  if (blog.title.length === 0 || blog.content.length === 0) {
+    const error = { title: "Error 400", message: "Bad Request" };
+    response.render("error", { pageTitle: error.title, path: "*", error });
+  } else {
+    blog.save();
+    response.redirect("/blogs/:id");
+  }
 };

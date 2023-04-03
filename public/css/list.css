@@ -1,5 +1,5 @@
 .list{
-    max-width: 500px;
+    max-width: 750px;
     margin: auto;
 }
 .list__header{
@@ -30,9 +30,17 @@
     font-size: 1.25rem;
 }
 .list__list-item h3{
+    width: 100%;
     color: #333;
     font-style: italic;
     margin-bottom: 1rem;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 32px;      /* fallback */
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
 }
 .list__list-item button, .list__list-item a{
     background-color: #FFA07A;

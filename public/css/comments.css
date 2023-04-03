@@ -1,0 +1,39 @@
+.comment-container{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.comm-list__header{
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.comm-list{
+    width: 100%;
+    text-decoration: none;
+    list-style: none;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.comm-list__item{
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 3px 3px 9px -6px black;
+}
+
+.comm-list__item h1{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.comm-list__item p{
+
+}

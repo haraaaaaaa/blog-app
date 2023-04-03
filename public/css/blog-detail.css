@@ -35,6 +35,7 @@
 
 .blog{
     width: auto;
+    height: auto;
     margin: auto;
     display: flex;
     flex-direction: column;

@@ -1,4 +1,4 @@
-// requirements
+// Requirements
 const path = require("path");
 const fs = require("fs");
 const { v4 } = require("uuid");
@@ -33,10 +33,12 @@ module.exports = class Comment {
     });
   }
 
-  static fetchAll(id, cb) {
+  static fetchAll(blogId, cb) {
     getCommentsFromFile((comments) => {
-      const comment = comments.find((comment) => comment.id === id);
-      cb(comments);
+      const filteredComments = comments.filter(
+        (comment) => comment.blogId === blogId
+      );
+      cb(filteredComments);
     });
   }
 };
